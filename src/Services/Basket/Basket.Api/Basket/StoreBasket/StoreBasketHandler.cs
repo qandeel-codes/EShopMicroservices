@@ -20,7 +20,6 @@ internal class StoreBasketCommandHandler(IBasketRepository repository)
     {
         ShoppingCart cart = command.Cart;
         
-        //TODO: update cache
         await repository.StoreBasket(command.Cart, cancellationToken);
         
         return new StoreBasketResult(command.Cart.UserName);
